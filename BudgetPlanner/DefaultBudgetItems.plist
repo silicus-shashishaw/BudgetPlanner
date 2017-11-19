@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>name</key>
+        <string>Loan EMI</string>
+        <key>type</key>
+        <string>Expense</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Bank Interest</string>
+        <key>type</key>
+        <string>Income</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Insurance</string>
+        <key>type</key>
+        <string>Expense</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Salary</string>
+        <key>type</key>
+        <string>Income</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Rent</string>
+        <key>type</key>
+        <string>Expense</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Food</string>
+        <key>type</key>
+        <string>Expense</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Utilities</string>
+        <key>type</key>
+        <string>Expense</string>
+    </dict>
+</array>
+</plist>

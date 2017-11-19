@@ -19,6 +19,7 @@
 		2DA296421FC15B7700F348B5 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2963F1FC15B7700F348B5 /* DataController.m */; };
 		2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296411FC15B7700F348B5 /* EntryDataController.m */; };
 		2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296471FC15E5300F348B5 /* SettingsController.m */; };
+		2DA2964C1FC162BC00F348B5 /* DefaultBudgetItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		2DA296411FC15B7700F348B5 /* EntryDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryDataController.m; path = Controllers/DataControllers/EntryDataController.m; sourceTree = "<group>"; };
 		2DA296461FC15E5300F348B5 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsController.h; path = Controllers/SettingsController.h; sourceTree = "<group>"; };
 		2DA296471FC15E5300F348B5 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsController.m; path = Controllers/SettingsController.m; sourceTree = "<group>"; };
+		2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultBudgetItems.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		2DA296171FC1596C00F348B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */,
 				2DA296181FC1596C00F348B5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA2964C1FC162BC00F348B5 /* DefaultBudgetItems.plist in Resources */,
 				2DA296271FC1596C00F348B5 /* LaunchScreen.storyboard in Resources */,
 				2DA296241FC1596C00F348B5 /* Assets.xcassets in Resources */,
 				2DA296221FC1596C00F348B5 /* Main.storyboard in Resources */,
