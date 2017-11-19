@@ -10,3 +10,6 @@
 
 // Databate entity names.
 NSString* const kEntityNameEntry                        = @"Entry";
+
+// Settings Keys.
+NSString* const kIsFirstUseKey                          = @"IsFirstUse";

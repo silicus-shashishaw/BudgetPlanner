@@ -18,6 +18,7 @@
 		2DA2963A1FC15B1D00F348B5 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296391FC15B1D00F348B5 /* Entry.m */; };
 		2DA296421FC15B7700F348B5 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2963F1FC15B7700F348B5 /* DataController.m */; };
 		2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296411FC15B7700F348B5 /* EntryDataController.m */; };
+		2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296471FC15E5300F348B5 /* SettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		2DA2963F1FC15B7700F348B5 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Controllers/DataControllers/DataController.m; sourceTree = "<group>"; };
 		2DA296401FC15B7700F348B5 /* EntryDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryDataController.h; path = Controllers/DataControllers/EntryDataController.h; sourceTree = "<group>"; };
 		2DA296411FC15B7700F348B5 /* EntryDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryDataController.m; path = Controllers/DataControllers/EntryDataController.m; sourceTree = "<group>"; };
+		2DA296461FC15E5300F348B5 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsController.h; path = Controllers/SettingsController.h; sourceTree = "<group>"; };
+		2DA296471FC15E5300F348B5 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsController.m; path = Controllers/SettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				2DA2963D1FC15B6700F348B5 /* DataControllers */,
+				2DA296461FC15E5300F348B5 /* SettingsController.h */,
+				2DA296471FC15E5300F348B5 /* SettingsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */,
 				2DA2963A1FC15B1D00F348B5 /* Entry.m in Sources */,
 				2DA2961F1FC1596C00F348B5 /* ViewController.m in Sources */,
+				2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */,
 				2DA296371FC15B0F00F348B5 /* BudgetPlanner.xcdatamodeld in Sources */,
 				2DA2961C1FC1596C00F348B5 /* AppDelegate.m in Sources */,
 				2DA296421FC15B7700F348B5 /* DataController.m in Sources */,

@@ -12,7 +12,7 @@
 @interface EntryDataController : NSObject
 
 /*!
- * @brief Adds an entry of specified type to the database.
+ * @brief Adds an Adhoc transaction entry, where as add/updates a regular transaction based on the description passed.
  * @param  entryType                The entry type of Income or Expense.
  * @param  transactionType          The transaction Type (Regular or AdHoc).
  * @param  amount                   The amount of money in the entry.
@@ -20,11 +20,11 @@
  * @param  description              The description for the entry.
  * @return BOOL                     Returns YES on success, NO otherwise.
  */
--(BOOL) addEntryWithType:(EntryType)entryType
-         transactionType:(TransactionType)transactionType
-                  amount:(float)amount
-                 forDate:(NSDate*)date
-             description:(NSString*)description;
+-(BOOL) addUpdateEntryWithType:(EntryType)entryType
+               transactionType:(TransactionType)transactionType
+                        amount:(float)amount
+                       forDate:(NSDate*)date
+                   description:(NSString*)description;
 
 /*!
  * @brief Returns the current account balance.

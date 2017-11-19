@@ -14,12 +14,12 @@
 
 @implementation EntryDataController
 
-// Adds and entry
--(BOOL) addEntryWithType:(EntryType)entryType
-         transactionType:(TransactionType)transactionType
-                  amount:(float)amount
-                 forDate:(NSDate*)date
-             description:(NSString*)description
+// Adds/Updates a transaction entry.
+-(BOOL) addUpdateEntryWithType:(EntryType)entryType
+               transactionType:(TransactionType)transactionType
+                        amount:(float)amount
+                       forDate:(NSDate*)date
+                   description:(NSString*)description
 {
     // Get a handle to the database controller and insert a new record.
     DataController* dataController = [DataController sharedInstance];
@@ -45,7 +45,6 @@
 
 
 // Returns the current ledger balance for the account.
-
 -(float) getAccountBalance
 {
     float balance = 0.0f;

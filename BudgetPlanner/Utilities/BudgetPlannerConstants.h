@@ -32,5 +32,7 @@ typedef enum
 // Database entity types.
 FOUNDATION_EXPORT NSString* const kEntityNameEntry;
 
+// Settings Keys.
+FOUNDATION_EXPORT NSString* const kIsFirstUseKey;
 
 
