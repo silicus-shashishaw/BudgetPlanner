@@ -32,6 +32,9 @@
         if(date) {
             entryObject.entryDate = date;
         }
+        else {
+            entryObject.entryDate = [NSDate date];
+        }
         entryObject.amount = amount;
         if(description){
             entryObject.desc = description;

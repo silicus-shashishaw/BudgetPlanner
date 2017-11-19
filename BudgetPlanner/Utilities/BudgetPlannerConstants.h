@@ -35,4 +35,8 @@ FOUNDATION_EXPORT NSString* const kEntityNameEntry;
 // Settings Keys.
 FOUNDATION_EXPORT NSString* const kIsFirstUseKey;
 
+// Default Budget Properties file name.
+FOUNDATION_EXPORT NSString* const kDefaultBudgetItemsFilename;
+
+
 

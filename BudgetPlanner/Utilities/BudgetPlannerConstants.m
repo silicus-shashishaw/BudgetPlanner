@@ -13,3 +13,6 @@ NSString* const kEntityNameEntry                        = @"Entry";
 
 // Settings Keys.
 NSString* const kIsFirstUseKey                          = @"IsFirstUse";
+
+// Default Budget Properties file name.
+NSString* const kDefaultBudgetItemsFilename             = @"DefaultBudgetItems";

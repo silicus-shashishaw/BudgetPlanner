@@ -20,6 +20,7 @@
 		2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296411FC15B7700F348B5 /* EntryDataController.m */; };
 		2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296471FC15E5300F348B5 /* SettingsController.m */; };
 		2DA2964C1FC162BC00F348B5 /* DefaultBudgetItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */; };
+		2DA2964F1FC1679100F348B5 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2964E1FC1679100F348B5 /* EntryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		2DA296461FC15E5300F348B5 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsController.h; path = Controllers/SettingsController.h; sourceTree = "<group>"; };
 		2DA296471FC15E5300F348B5 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsController.m; path = Controllers/SettingsController.m; sourceTree = "<group>"; };
 		2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultBudgetItems.plist; sourceTree = "<group>"; };
+		2DA2964D1FC1679100F348B5 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryController.h; path = Controllers/EntryController.h; sourceTree = "<group>"; };
+		2DA2964E1FC1679100F348B5 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryController.m; path = Controllers/EntryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				2DA2963D1FC15B6700F348B5 /* DataControllers */,
 				2DA296461FC15E5300F348B5 /* SettingsController.h */,
 				2DA296471FC15E5300F348B5 /* SettingsController.m */,
+				2DA2964D1FC1679100F348B5 /* EntryController.h */,
+				2DA2964E1FC1679100F348B5 /* EntryController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA2964F1FC1679100F348B5 /* EntryController.m in Sources */,
 				2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */,
 				2DA2963A1FC15B1D00F348B5 /* Entry.m in Sources */,
 				2DA2961F1FC1596C00F348B5 /* ViewController.m in Sources */,
