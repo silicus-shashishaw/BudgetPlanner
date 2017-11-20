@@ -16,3 +16,8 @@ NSString* const kIsFirstUseKey                          = @"IsFirstUse";
 
 // Default Budget Properties file name.
 NSString* const kDefaultBudgetItemsFilename             = @"DefaultBudgetItems";
+
+// Form keys.
+NSString* const kIncomesKey                             = @"Incomes";
+NSString* const kExpensesKey                            = @"Expenses";
+NSString* const kTotalKey                               = @"Total";

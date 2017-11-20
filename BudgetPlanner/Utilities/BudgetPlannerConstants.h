@@ -38,5 +38,10 @@ FOUNDATION_EXPORT NSString* const kIsFirstUseKey;
 // Default Budget Properties file name.
 FOUNDATION_EXPORT NSString* const kDefaultBudgetItemsFilename;
 
+// Form keys.
+FOUNDATION_EXPORT NSString* const kIncomesKey;
+FOUNDATION_EXPORT NSString* const kExpensesKey;
+FOUNDATION_EXPORT NSString* const kTotalKey;
+
 
 

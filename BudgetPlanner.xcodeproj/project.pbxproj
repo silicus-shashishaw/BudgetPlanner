@@ -21,9 +21,11 @@
 		2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296471FC15E5300F348B5 /* SettingsController.m */; };
 		2DA2964C1FC162BC00F348B5 /* DefaultBudgetItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */; };
 		2DA2964F1FC1679100F348B5 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2964E1FC1679100F348B5 /* EntryController.m */; };
+		8EA6E1D22DE28554E168B595 /* libPods-BudgetPlanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5121E2B36AB14340A23B07F0 /* libPods-BudgetPlanner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13346BEAA29C4AB96EB070E8 /* Pods-BudgetPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetPlanner/Pods-BudgetPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		2DA296141FC1596C00F348B5 /* BudgetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA296181FC1596C00F348B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DA2961A1FC1596C00F348B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		2DA2964B1FC162BC00F348B5 /* DefaultBudgetItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultBudgetItems.plist; sourceTree = "<group>"; };
 		2DA2964D1FC1679100F348B5 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryController.h; path = Controllers/EntryController.h; sourceTree = "<group>"; };
 		2DA2964E1FC1679100F348B5 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryController.m; path = Controllers/EntryController.m; sourceTree = "<group>"; };
+		5121E2B36AB14340A23B07F0 /* libPods-BudgetPlanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BudgetPlanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F28D80725B8E0C13515A080B /* Pods-BudgetPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetPlanner/Pods-BudgetPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA6E1D22DE28554E168B595 /* libPods-BudgetPlanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 			children = (
 				2DA296161FC1596C00F348B5 /* BudgetPlanner */,
 				2DA296151FC1596C00F348B5 /* Products */,
+				9805BDE4010D2C0E124AD084 /* Pods */,
+				C6535B535D613B4D531F5C48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +162,23 @@
 			name = DataControllers;
 			sourceTree = "<group>";
 		};
+		9805BDE4010D2C0E124AD084 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F28D80725B8E0C13515A080B /* Pods-BudgetPlanner.debug.xcconfig */,
+				13346BEAA29C4AB96EB070E8 /* Pods-BudgetPlanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6535B535D613B4D531F5C48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5121E2B36AB14340A23B07F0 /* libPods-BudgetPlanner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DA2962B1FC1596C00F348B5 /* Build configuration list for PBXNativeTarget "BudgetPlanner" */;
 			buildPhases = (
+				B4D430A780811471721AEC61 /* [CP] Check Pods Manifest.lock */,
 				2DA296101FC1596C00F348B5 /* Sources */,
 				2DA296111FC1596C00F348B5 /* Frameworks */,
 				2DA296121FC1596C00F348B5 /* Resources */,
+				57263410F9B5F2B537118677 /* [CP] Embed Pods Frameworks */,
+				617966E1D1E53DA1171D30E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +248,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57263410F9B5F2B537118677 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BudgetPlanner/Pods-BudgetPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		617966E1D1E53DA1171D30E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BudgetPlanner/Pods-BudgetPlanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4D430A780811471721AEC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DA296101FC1596C00F348B5 /* Sources */ = {
@@ -352,6 +427,7 @@
 		};
 		2DA2962C1FC1596C00F348B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28D80725B8E0C13515A080B /* Pods-BudgetPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -364,6 +440,7 @@
 		};
 		2DA2962D1FC1596C00F348B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13346BEAA29C4AB96EB070E8 /* Pods-BudgetPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
