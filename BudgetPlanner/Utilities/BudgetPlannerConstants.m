@@ -18,6 +18,7 @@ NSString* const kIsFirstUseKey                          = @"IsFirstUse";
 NSString* const kDefaultBudgetItemsFilename             = @"DefaultBudgetItems";
 
 // Form keys.
+NSString* const kAccount_SummaryKey                     = @"Account Summary";
 NSString* const kIncomesKey                             = @"Incomes";
 NSString* const kExpensesKey                            = @"Expenses";
 NSString* const kTotalKey                               = @"Total";

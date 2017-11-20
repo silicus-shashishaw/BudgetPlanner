@@ -39,6 +39,7 @@ FOUNDATION_EXPORT NSString* const kIsFirstUseKey;
 FOUNDATION_EXPORT NSString* const kDefaultBudgetItemsFilename;
 
 // Form keys.
+FOUNDATION_EXPORT NSString* const kAccount_SummaryKey;
 FOUNDATION_EXPORT NSString* const kIncomesKey;
 FOUNDATION_EXPORT NSString* const kExpensesKey;
 FOUNDATION_EXPORT NSString* const kTotalKey;

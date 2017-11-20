@@ -23,10 +23,31 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Budget Planner" id="Sqy-6G-Pt6"/>
+                    <connections>
+                        <segue destination="ihl-7J-f2B" kind="show" identifier="segueToAccountDetailViewController" id="rKL-tj-uTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="778"/>
+        </scene>
+        <!--Account Details-->
+        <scene sceneID="jFj-vy-NCV">
+            <objects>
+                <viewController storyboardIdentifier="AccountDetailsViewController" title="Account Details" id="ihl-7J-f2B" customClass="AccountDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tbp-6G-5iA"/>
+                        <viewControllerLayoutGuide type="bottom" id="0gM-9O-fWP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ris-hZ-Ewu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1J-FY-30V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Khu-5c-pMm">
