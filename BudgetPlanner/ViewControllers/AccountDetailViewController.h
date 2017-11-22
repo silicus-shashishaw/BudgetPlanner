@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLForm.h"
+#import "BudgetPlannerConstants.h"
 
-@interface AccountDetailViewController : UIViewController
+@interface AccountDetailViewController : XLFormViewController
+
+// Type used to display appropriate form.
+@property (assign, nonatomic) EntryType entryType;
 
 @end

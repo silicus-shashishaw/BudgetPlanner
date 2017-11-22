@@ -86,4 +86,23 @@
     return balance;
 }
 
+
+// Returns entries of specified Type.
+-(NSArray*) getAllEntriesOfType:(EntryType)entryType
+{
+    // Get All entries.
+    DataController* dataController = [DataController sharedInstance];
+    // Get all income entries.
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"entryType == %d",
+                              entryType];
+    // Sorted by Description.
+    NSSortDescriptor* sortOrder = [[NSSortDescriptor alloc] initWithKey:@"desc"
+                                                              ascending:YES];
+    NSArray* descriptors = [NSArray arrayWithObjects:sortOrder, nil];
+    NSArray* allEntities = [dataController getAllEntitiesWithEntityName:kEntityNameEntry
+                                                          withPredicate:predicate
+                                                        sortDescriptors:descriptors];
+    return allEntities;
+}
+
 @end

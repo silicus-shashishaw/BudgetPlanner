@@ -32,5 +32,12 @@
  */
 -(float) getAccountBalance;
 
+/*!
+ * @brief Returns all entries of specified entry type.
+ * @param  entryType                The type of the entries to be return either Income or Expense.
+ * @return NSArray*                 An array of all entries of specified type.
+ */
+-(NSArray*) getAllEntriesOfType:(EntryType)entryType;
+
 
 @end

@@ -102,6 +102,12 @@
         
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         AccountDetailViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"AccountDetailsViewController"];
+        if([formRow.tag isEqual:kIncomesKey]) {
+            [vc setEntryType:ENTRY_TYPE_INCOME];
+        }
+        else if([formRow.tag isEqual:kExpensesKey]) {
+            [vc setEntryType:ENTRY_TYPE_EXPENSE];
+        }
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

@@ -22,7 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Budget Planner" id="Sqy-6G-Pt6"/>
+                    <navigationItem key="navigationItem" title="Budget Planner" id="Sqy-6G-Pt6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="utC-vY-zR3"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="ihl-7J-f2B" kind="show" identifier="segueToAccountDetailViewController" id="rKL-tj-uTA"/>
                     </connections>
