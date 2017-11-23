@@ -58,6 +58,7 @@
     }
 }
 
+
 // Returns the account Summary.
 -(AccountSummary*) getAccountSummary
 {
@@ -66,11 +67,21 @@
 }
 
 
-// Returns account balance.
--(float) getAccountBalance
+// Adds/Updates a transaction entry.
+-(BOOL) addUpdateEntryWithType:(EntryType)entryType
+               transactionType:(TransactionType)transactionType
+                        amount:(float)amount
+                       forDate:(NSDate*)date
+                   description:(NSString*)description
 {
+    
     EntryDataController* dc = [[EntryDataController alloc] init];
-    return ([dc getAccountBalance]);
+    return([dc addUpdateEntryWithType:entryType
+                      transactionType:transactionType
+                               amount:amount
+                              forDate:date
+                          description:description]);
 }
 
 @end
+

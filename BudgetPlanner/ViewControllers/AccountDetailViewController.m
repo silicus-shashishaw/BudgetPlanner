@@ -9,13 +9,17 @@
 #import "AccountDetailViewController.h"
 #import "EntryDataController.h"
 #import "Entry.h"
+#import "AddEntryViewController.h"
 #import "USDCurrencyFormatter.h"
 
-@interface AccountDetailViewController ()
+@interface AccountDetailViewController ()<AddEntryDelegate>
 {
     // XL form for details
     XLFormDescriptor* detailForm;
 }
+
+// Flag used to refresh screen.
+@property (assign, nonatomic) BOOL isReloadRequired;
 
 // Array to hold the entries.
 @property (strong, nonatomic) NSArray* entries;
@@ -25,8 +29,6 @@
 @implementation AccountDetailViewController
 
 // String Constants
-NSString* const kRegularKey = @"Regular";
-NSString* const kAd_HocKey  = @"Ad-Hoc";
 
 -(void) viewDidLoad
 {
@@ -35,6 +37,17 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
     // Do any additional setup after loading the view.
     [self initialize];
 }
+
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    // Re initialize if reload required.
+    if(self.isReloadRequired) {
+        self.isReloadRequired = NO;
+        [self initialize];
+    }
+}
+
 
 -(void) didReceiveMemoryWarning
 {
@@ -48,7 +61,6 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
 {
     EntryDataController* dc = [[EntryDataController alloc] init];
     self.entries = [dc getAllEntriesOfType:self.entryType];
-    
     
     // Initialize the view.
     [self initializeView];
@@ -78,6 +90,7 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
     
     // Filter in terms of Regular and Ad-Hoc.
     // Section Header.
+    float total = 0.0;
     section = [XLFormSectionDescriptor formSection];
     section.title = kRegularKey;
     [detailForm addFormSection:section];
@@ -87,7 +100,6 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
     NSArray* filteredList = [self.entries filteredArrayUsingPredicate:predicate];
     if(filteredList && [filteredList count] > 0) {
         
-        
         // Loading Regular items.
         for(Entry* entry in filteredList) {
             // Desc.
@@ -96,13 +108,25 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
                                                           title:entry.desc];
             [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
             row.value = [NSNumber numberWithFloat:entry.amount];
+            total += entry.amount;
             row.valueFormatter = currencyFormatter;
             [section addFormRow:row];
         }
     }
+    // Total.
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTotalKey
+                                                rowType:XLFormRowDescriptorTypeDecimal
+                                                  title:kTotalKey];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    row.value = [NSNumber numberWithFloat:total];
+    row.valueFormatter = currencyFormatter;
+    row.disabled = @YES;
+    [section addFormRow:row];
+    
     
     // Load Ad Hoc Items.
     // Section Header.
+    total = 0.0;
     section = [XLFormSectionDescriptor formSection];
     section.title = kAd_HocKey;
     [detailForm addFormSection:section];
@@ -120,10 +144,20 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
                                                           title:entry.desc];
             [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
             row.value = [NSNumber numberWithFloat:entry.amount];
+            total += entry.amount;
             row.valueFormatter = currencyFormatter;
             [section addFormRow:row];
         }
     }
+    // Total.
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTotalKey
+                                                rowType:XLFormRowDescriptorTypeDecimal
+                                                  title:kTotalKey];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    row.value = [NSNumber numberWithFloat:total];
+    row.valueFormatter = currencyFormatter;
+    row.disabled = @YES;
+    [section addFormRow:row];
     
     // Set the form.
     self.form = detailForm;
@@ -155,16 +189,20 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
         for(XLFormRowDescriptor* row in allRows) {
             NSString* rowDesc = row.title;
             NSNumber* rowValue = row.value;
-            float amount = 0.0;
-            if(rowValue && [rowValue isKindOfClass:[NSNumber class]]) {
-                amount = [rowValue floatValue];
-            }
-            predicate = [NSPredicate predicateWithFormat:@"desc == [c]%@ && transactionType == %d",
-                         rowDesc, type];
-            NSArray* result = [self.entries filteredArrayUsingPredicate:predicate];
-            if(result && [result count] > 0) {
-                Entry* currentEntry = [result firstObject];
-                currentEntry.amount = amount;
+            
+            // Select only the actual rows.. Not the 'Total' row.
+            if([rowDesc caseInsensitiveCompare:kTotalKey] != NSOrderedSame) {
+                float amount = 0.0;
+                if(rowValue && [rowValue isKindOfClass:[NSNumber class]]) {
+                    amount = [rowValue floatValue];
+                }
+                predicate = [NSPredicate predicateWithFormat:@"desc == [c]%@ && transactionType == %d",
+                             rowDesc, type];
+                NSArray* result = [self.entries filteredArrayUsingPredicate:predicate];
+                if(result && [result count] > 0) {
+                    Entry* currentEntry = [result firstObject];
+                    currentEntry.amount = amount;
+                }
             }
         }
     }
@@ -177,9 +215,68 @@ NSString* const kAd_HocKey  = @"Ad-Hoc";
     if(self.delegate && [self.delegate respondsToSelector:@selector(accountUpdated)]) {
         [self.delegate accountUpdated];
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+    
 }
 
+
+// Handle add action.
+-(IBAction) didTapAddButton:(UIBarButtonItem *)sender
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    AddEntryViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"AddEntryViewController"];
+    [vc setEntryType:self.entryType];
+    [vc setAddDelegate:self];
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
+
+#pragma mark - XLFormDescriptorDelegate
+
+
+// Handle change in Quantity or Unit Price.
+-(void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue
+{
+    [super formRowDescriptorValueHasChanged:formRow oldValue:oldValue newValue:newValue];
+    
+    if([formRow.title caseInsensitiveCompare:kTotalKey] != NSOrderedSame) {
+        // Get the Total Row for the current section and update its value.
+        XLFormSectionDescriptor* currentSection =  formRow.sectionDescriptor;
+        NSArray* rows = currentSection.formRows;
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"tag == [c]%@",kTotalKey];
+        NSArray* filteredList = [rows filteredArrayUsingPredicate:predicate];
+        if(filteredList && [filteredList count]  > 0) {
+            
+            float previous = 0.0;
+            if(oldValue && [oldValue isKindOfClass:[NSNumber class]]) {
+                previous = [oldValue floatValue];
+            }
+            
+            float next = 0.0;
+            if(newValue && [newValue isKindOfClass:[NSNumber class]]) {
+                next = [newValue floatValue];
+            }
+            
+            XLFormRowDescriptor* totalRow = [filteredList firstObject];
+            float currentValue = [totalRow.value floatValue];
+            float result = currentValue + next - previous;
+            totalRow.value = [NSNumber numberWithFloat:result];
+            [self reloadFormRow:totalRow];
+        }
+    }
+}
+
+
+#pragma mark - AddEntryDelegate
+
+// Notifies new entry added.
+-(void) newEntryAdded
+{
+    self.isReloadRequired = YES;
+}
 
 
 /*

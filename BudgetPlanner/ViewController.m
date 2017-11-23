@@ -20,6 +20,7 @@
     XLFormDescriptor* accountSummaryForm;
 }
 
+// Flag used to refresh screen.
 @property (assign, nonatomic) BOOL isReloadRequired;
 
 // property to hold the account summary.
@@ -122,6 +123,7 @@
                                                 rowType:XLFormRowDescriptorTypeSelectorPush
                                                   title:kReportKey];
     [row.cellConfig setObject:@(UITableViewCellAccessoryDisclosureIndicator) forKey:@"accessoryType"];
+    [row.cellConfig setObject:@"UITableViewCellSelectionStyleNone" forKey:@"selectionStyle"];
     [section addFormRow:row];
     
     

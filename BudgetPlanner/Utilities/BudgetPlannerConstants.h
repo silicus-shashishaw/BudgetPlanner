@@ -38,11 +38,23 @@ FOUNDATION_EXPORT NSString* const kIsFirstUseKey;
 // Default Budget Properties file name.
 FOUNDATION_EXPORT NSString* const kDefaultBudgetItemsFilename;
 
+// Transaction Type.
+FOUNDATION_EXPORT NSString* const kRegularKey;
+FOUNDATION_EXPORT NSString* const kAd_HocKey;
+
+
 // Form keys.
 FOUNDATION_EXPORT NSString* const kAccount_SummaryKey;
 FOUNDATION_EXPORT NSString* const kIncomesKey;
 FOUNDATION_EXPORT NSString* const kExpensesKey;
 FOUNDATION_EXPORT NSString* const kBalanceKey;
 FOUNDATION_EXPORT NSString* const kReportKey;
+FOUNDATION_EXPORT NSString* const kTotalKey;
+
+
+// Add Form
+FOUNDATION_EXPORT NSString* const kTypeKey;
+FOUNDATION_EXPORT NSString* const kDescriptionKey;
+FOUNDATION_EXPORT NSString* const kAmountKey;
 
 

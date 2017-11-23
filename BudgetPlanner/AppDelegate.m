@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "EntryController.h"
+#import "SettingsController.h"
+
 
 @interface AppDelegate ()
 
@@ -15,8 +18,15 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // Initialize the local database with default budget items (Income/Expense) on first launch.
+    SettingsController* settingsController = [SettingsController sharedInstance];
+    if([settingsController isFirstUse]) {
+        [settingsController setIsFirstUse:NO];
+        EntryController* ec = [[EntryController alloc] init];
+        [ec initializeDefaultEntries];
+    }
     return YES;
 }
 

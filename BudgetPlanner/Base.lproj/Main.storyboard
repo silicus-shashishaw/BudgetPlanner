@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +28,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="ihl-7J-f2B" kind="show" identifier="segueToAccountDetailViewController" id="rKL-tj-uTA"/>
-                        <segue destination="g6i-li-ISn" kind="show" id="u7a-6j-nSy"/>
+                        <segue destination="g6i-li-ISn" kind="show" identifier="SegueToReportViewController" id="u7a-6j-nSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,16 +68,52 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="57O-GE-k6k">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Vvh-UJ-oL8">
-                            <connections>
-                                <action selector="didTapSave:" destination="ihl-7J-f2B" id="yfp-6W-2iH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Cnf-xt-7eN"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" id="Vvh-UJ-oL8">
+                                <connections>
+                                    <action selector="didTapSave:" destination="ihl-7J-f2B" id="yfp-6W-2iH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="OGW-pB-tMq">
+                                <connections>
+                                    <action selector="didTapAddButton:" destination="ihl-7J-f2B" id="UVm-jB-WiI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Gbf-xE-MMg" kind="show" id="T7X-NV-QdU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1J-FY-30V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088.8000000000002" y="483.50824587706148"/>
+        </scene>
+        <!--Add Entry-->
+        <scene sceneID="i0o-fO-hMc">
+            <objects>
+                <viewController storyboardIdentifier="AddEntryViewController" id="Gbf-xE-MMg" customClass="AddEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A6L-rm-fyl"/>
+                        <viewControllerLayoutGuide type="bottom" id="eCu-Sa-BgJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMy-ro-MTU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Entry" id="ybO-x3-ZFP">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="LKP-45-oOT">
+                            <connections>
+                                <action selector="didTapSaveButton:" destination="Gbf-xE-MMg" id="biY-mp-ifa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhj-3b-mLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2835" y="487"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Khu-5c-pMm">
