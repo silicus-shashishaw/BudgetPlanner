@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BudgetPlannerConstants.h"
 
+@class AccountSummary;
+
 @interface EntryDataController : NSObject
 
 /*!
@@ -27,6 +29,13 @@
                    description:(NSString*)description;
 
 /*!
+ * @brief Returns the Account Summary as available from the Database
+ * @return AccountSummary*          The current account summary.
+ */
+-(AccountSummary*) getAccountSummary;
+
+
+/*!
  * @brief Returns the current account balance.
  * @return float                    The current amount with the Bank.
  */
@@ -38,6 +47,11 @@
  * @return NSArray*                 An array of all entries of specified type.
  */
 -(NSArray*) getAllEntriesOfType:(EntryType)entryType;
+
+/*!
+ * @brief Performs a save on all the objects in the context.
+ */
+-(void) saveAllObjects;
 
 
 @end

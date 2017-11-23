@@ -42,7 +42,7 @@ FOUNDATION_EXPORT NSString* const kDefaultBudgetItemsFilename;
 FOUNDATION_EXPORT NSString* const kAccount_SummaryKey;
 FOUNDATION_EXPORT NSString* const kIncomesKey;
 FOUNDATION_EXPORT NSString* const kExpensesKey;
-FOUNDATION_EXPORT NSString* const kTotalKey;
-
+FOUNDATION_EXPORT NSString* const kBalanceKey;
+FOUNDATION_EXPORT NSString* const kReportKey;
 
 

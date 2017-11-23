@@ -21,4 +21,5 @@ NSString* const kDefaultBudgetItemsFilename             = @"DefaultBudgetItems";
 NSString* const kAccount_SummaryKey                     = @"Account Summary";
 NSString* const kIncomesKey                             = @"Incomes";
 NSString* const kExpensesKey                            = @"Expenses";
-NSString* const kTotalKey                               = @"Total";
+NSString* const kBalanceKey                             = @"Balance";
+NSString* const kReportKey                              = @"Report";

@@ -9,6 +9,7 @@
 #import "EntryController.h"
 #import "BudgetPlannerConstants.h"
 #import "EntryDataController.h"
+#import "AccountSummary.h"
 
 @implementation EntryController
 
@@ -55,6 +56,13 @@
             }
         }
     }
+}
+
+// Returns the account Summary.
+-(AccountSummary*) getAccountSummary
+{
+    EntryDataController* dc = [[EntryDataController alloc] init];
+    return([dc getAccountSummary]);
 }
 
 

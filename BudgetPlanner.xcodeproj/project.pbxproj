@@ -23,6 +23,8 @@
 		2DA2964F1FC1679100F348B5 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2964E1FC1679100F348B5 /* EntryController.m */; };
 		2DA296551FC30EE900F348B5 /* AccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296541FC30EE900F348B5 /* AccountDetailViewController.m */; };
 		2DA296581FC3138200F348B5 /* USDCurrencyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA296571FC3138200F348B5 /* USDCurrencyFormatter.m */; };
+		2DB5BB241FC67E3E00BAF8BB /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5BB231FC67E3E00BAF8BB /* ReportViewController.m */; };
+		2DB5BB271FC682E300BAF8BB /* AccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5BB261FC682E300BAF8BB /* AccountSummary.m */; };
 		8EA6E1D22DE28554E168B595 /* libPods-BudgetPlanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5121E2B36AB14340A23B07F0 /* libPods-BudgetPlanner.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,10 @@
 		2DA296541FC30EE900F348B5 /* AccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountDetailViewController.m; path = ViewControllers/AccountDetailViewController.m; sourceTree = "<group>"; };
 		2DA296561FC3138200F348B5 /* USDCurrencyFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USDCurrencyFormatter.h; path = Utilities/USDCurrencyFormatter.h; sourceTree = "<group>"; };
 		2DA296571FC3138200F348B5 /* USDCurrencyFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USDCurrencyFormatter.m; path = Utilities/USDCurrencyFormatter.m; sourceTree = "<group>"; };
+		2DB5BB221FC67E3E00BAF8BB /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportViewController.h; path = ViewControllers/ReportViewController.h; sourceTree = "<group>"; };
+		2DB5BB231FC67E3E00BAF8BB /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportViewController.m; path = ViewControllers/ReportViewController.m; sourceTree = "<group>"; };
+		2DB5BB251FC682E300BAF8BB /* AccountSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountSummary.h; path = Models/AccountSummary.h; sourceTree = "<group>"; };
+		2DB5BB261FC682E300BAF8BB /* AccountSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountSummary.m; path = Models/AccountSummary.m; sourceTree = "<group>"; };
 		5121E2B36AB14340A23B07F0 /* libPods-BudgetPlanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BudgetPlanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28D80725B8E0C13515A080B /* Pods-BudgetPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetPlanner/Pods-BudgetPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +143,8 @@
 				2DA296381FC15B1D00F348B5 /* Entry.h */,
 				2DA296391FC15B1D00F348B5 /* Entry.m */,
 				2DA296351FC15B0F00F348B5 /* BudgetPlanner.xcdatamodeld */,
+				2DB5BB251FC682E300BAF8BB /* AccountSummary.h */,
+				2DB5BB261FC682E300BAF8BB /* AccountSummary.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,6 +154,8 @@
 			children = (
 				2DA296531FC30EE900F348B5 /* AccountDetailViewController.h */,
 				2DA296541FC30EE900F348B5 /* AccountDetailViewController.m */,
+				2DB5BB221FC67E3E00BAF8BB /* ReportViewController.h */,
+				2DB5BB231FC67E3E00BAF8BB /* ReportViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -316,10 +326,12 @@
 				2DA2964F1FC1679100F348B5 /* EntryController.m in Sources */,
 				2DA296431FC15B7700F348B5 /* EntryDataController.m in Sources */,
 				2DA2963A1FC15B1D00F348B5 /* Entry.m in Sources */,
+				2DB5BB271FC682E300BAF8BB /* AccountSummary.m in Sources */,
 				2DA2961F1FC1596C00F348B5 /* ViewController.m in Sources */,
 				2DA296481FC15E5300F348B5 /* SettingsController.m in Sources */,
 				2DA296371FC15B0F00F348B5 /* BudgetPlanner.xcdatamodeld in Sources */,
 				2DA2961C1FC1596C00F348B5 /* AppDelegate.m in Sources */,
+				2DB5BB241FC67E3E00BAF8BB /* ReportViewController.m in Sources */,
 				2DA296421FC15B7700F348B5 /* DataController.m in Sources */,
 				2DA296551FC30EE900F348B5 /* AccountDetailViewController.m in Sources */,
 				2DA296191FC1596C00F348B5 /* main.m in Sources */,

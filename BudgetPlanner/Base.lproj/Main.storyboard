@@ -27,11 +27,31 @@
                     </navigationItem>
                     <connections>
                         <segue destination="ihl-7J-f2B" kind="show" identifier="segueToAccountDetailViewController" id="rKL-tj-uTA"/>
+                        <segue destination="g6i-li-ISn" kind="show" id="u7a-6j-nSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="778"/>
+        </scene>
+        <!--Report-->
+        <scene sceneID="FOk-Bm-qNV">
+            <objects>
+                <viewController storyboardIdentifier="ReportViewController" id="g6i-li-ISn" customClass="ReportViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iR7-YP-7D1"/>
+                        <viewControllerLayoutGuide type="bottom" id="X3d-3a-4pa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sP4-CE-1U9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report" id="Cpt-IR-fxy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dn8-jQ-wuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2082" y="1181"/>
         </scene>
         <!--Account Details-->
         <scene sceneID="jFj-vy-NCV">
@@ -46,10 +66,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="57O-GE-k6k">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Vvh-UJ-oL8">
+                            <connections>
+                                <action selector="didTapSave:" destination="ihl-7J-f2B" id="yfp-6W-2iH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1J-FY-30V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="778"/>
+            <point key="canvasLocation" x="2088.8000000000002" y="483.50824587706148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Khu-5c-pMm">

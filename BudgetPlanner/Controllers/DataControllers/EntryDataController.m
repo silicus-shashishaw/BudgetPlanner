@@ -10,6 +10,7 @@
 #import "DataController.h"
 #import "Entry.h"
 #import "BudgetPlannerConstants.h"
+#import "AccountSummary.h"
 
 
 @implementation EntryDataController
@@ -23,8 +24,15 @@
 {
     // Get a handle to the database controller and insert a new record.
     DataController* dataController = [DataController sharedInstance];
-    Entry* entryObject = [NSEntityDescription insertNewObjectForEntityForName:kEntityNameEntry
-                                                       inManagedObjectContext:dataController.managedObjectContext];
+    
+    // Check if an entry already exists.
+    Entry* entryObject = [self getEntryOfType:entryType withDescription:description];
+    if(entryObject == nil) {
+        entryObject = [NSEntityDescription insertNewObjectForEntityForName:kEntityNameEntry
+                                                    inManagedObjectContext:dataController.managedObjectContext];
+    }
+    
+    // Set properties.
     if(entryObject) {
         // Set properties for the object.
         entryObject.entryType = entryType;
@@ -44,6 +52,44 @@
         return YES;
     }
     return NO;
+}
+
+
+// Returns the account summary.
+-(AccountSummary*) getAccountSummary
+{
+    AccountSummary* summary = [[AccountSummary alloc] init];
+    
+    // Get All entries.
+    DataController* dataController = [DataController sharedInstance];
+    NSArray* allEntities = [dataController getAllEntitiesWithEntityName:kEntityNameEntry
+                                                          withPredicate:nil
+                                                        sortDescriptors:nil];
+    if(allEntities && [allEntities count] > 0){
+        // Get all income entries.
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"entryType == %d",
+                                  ENTRY_TYPE_INCOME];
+        NSArray* filteredValues = [allEntities filteredArrayUsingPredicate:predicate];
+        if(filteredValues && [filteredValues count] > 0) {
+            for(Entry* item in filteredValues) {
+                summary.incomes += item.amount;
+            }
+        }
+        
+        // Get all expenses.
+        predicate = [NSPredicate predicateWithFormat:@"entryType == %d",
+                     ENTRY_TYPE_EXPENSE];
+        filteredValues = [allEntities filteredArrayUsingPredicate:predicate];
+        if(filteredValues && [filteredValues count] > 0) {
+            for(Entry* item in filteredValues) {
+                summary.expenses += item.amount;
+            }
+        }
+        
+        // Compute balance
+        summary.totalBalance = summary.incomes - summary.expenses;
+    }
+    return summary;
 }
 
 
@@ -103,6 +149,38 @@
                                                           withPredicate:predicate
                                                         sortDescriptors:descriptors];
     return allEntities;
+}
+
+
+// Saves the context.
+-(void) saveAllObjects
+{
+    DataController* dataController = [DataController sharedInstance];
+    [dataController saveContext];
+}
+
+
+#pragma mark - Private Methods.
+
+/*!
+ * @brief Returns an instance of the specified entry type with the description, else nil.
+ */
+-(Entry*) getEntryOfType:(EntryType)entryType
+         withDescription:(NSString*)description
+{
+    // Ensure description is valid.
+    if(!(description && [description length] > 0)) {
+        return nil;
+    }
+    
+    // Get All entries.
+    DataController* dataController = [DataController sharedInstance];
+    // Get all income entries.
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"entryType == %d && desc == [c]%@",
+                              entryType, description];
+    Entry* entry = [dataController getEntityWithName:kEntityNameEntry
+                                           predicate:predicate];
+    return entry;
 }
 
 @end
