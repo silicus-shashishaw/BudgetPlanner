@@ -4,7 +4,7 @@
 <array>
     <dict>
         <key>name</key>
-        <string>Loan EMI</string>
+        <string>Car Loan EMI</string>
         <key>type</key>
         <string>Expense</string>
     </dict>
@@ -16,7 +16,7 @@
     </dict>
     <dict>
         <key>name</key>
-        <string>Insurance</string>
+        <string>Life Insurance</string>
         <key>type</key>
         <string>Expense</string>
     </dict>
@@ -28,7 +28,7 @@
     </dict>
     <dict>
         <key>name</key>
-        <string>Rent</string>
+        <string>House Rent</string>
         <key>type</key>
         <string>Expense</string>
     </dict>
